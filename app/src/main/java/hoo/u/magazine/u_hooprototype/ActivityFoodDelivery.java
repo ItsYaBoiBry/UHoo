@@ -35,7 +35,7 @@ public class ActivityFoodDelivery extends AppCompatActivity {
         });
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Light.ttf")
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );

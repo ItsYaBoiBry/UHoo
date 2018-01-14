@@ -20,9 +20,9 @@
         android:layout_marginRight="10dp"
         android:id="@+id/tvRest"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="restaurant"
-        android:textSize="25dp" />
+    android:layout_height="wrap_content"
+    android:hint="restaurant"
+    android:textSize="25dp" />
 
     <View
         android:layout_marginLeft="10dp"

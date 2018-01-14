@@ -1,5 +1,6 @@
 package hoo.u.magazine.u_hooprototype;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -8,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MedicalActivity extends AppCompatActivity {
 
@@ -18,6 +22,12 @@ public class MedicalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical);
         ImageButton bck = (ImageButton) findViewById(R.id.btnBack);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
 
         bck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,5 +90,9 @@ public class MedicalActivity extends AppCompatActivity {
 //            }
 //        });
         builder.show();
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

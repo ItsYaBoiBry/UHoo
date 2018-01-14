@@ -23,11 +23,14 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class WhoIsThePatientActivity extends AppCompatActivity {
 
-    Button btnMe,btnSomeoneElse,btnNext;
+    Button btnMe, btnSomeoneElse, btnNext;
     Spinner spnMyChild;
-    EditText etAddAChildFirstName, etAddAChildLastName,etAddAChildDateOfBirth,etAddAChildNRICorPassport;
+    EditText etAddAChildFirstName, etAddAChildLastName, etAddAChildDateOfBirth, etAddAChildNRICorPassport;
     RadioGroup rg;
 
 
@@ -44,10 +47,17 @@ public class WhoIsThePatientActivity extends AppCompatActivity {
             }
         });
 
-        btnMe = (Button)findViewById(R.id.buttonMe);
-        btnSomeoneElse = (Button)findViewById(R.id.buttonSomeoneElse);
-        btnNext = (Button)findViewById(R.id.buttonNext);
-        spnMyChild = (Spinner)findViewById(R.id.spinnerMyChild);
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
+
+
+        btnMe = (Button) findViewById(R.id.buttonMe);
+        btnSomeoneElse = (Button) findViewById(R.id.buttonSomeoneElse);
+        btnNext = (Button) findViewById(R.id.buttonNext);
+        spnMyChild = (Spinner) findViewById(R.id.spinnerMyChild);
 
         btnMe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,12 +71,12 @@ public class WhoIsThePatientActivity extends AppCompatActivity {
         spnMyChild.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(spnMyChild.getSelectedItemPosition() == 0){
+                if (spnMyChild.getSelectedItemPosition() == 0) {
                     Toasty("Child 1 selected");
 
-                }else if (spnMyChild.getSelectedItemPosition() == 1){
+                } else if (spnMyChild.getSelectedItemPosition() == 1) {
                     Toasty("Child 2 selected");
-                }else{
+                } else {
                     alertDialogAddAChild();
                 }
                 btnSomeoneElse.setBackgroundColor(getResources().getColor(R.color.white));
@@ -93,7 +103,7 @@ public class WhoIsThePatientActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(),PresentConditionActivity.class));
+                startActivity(new Intent(getBaseContext(), PresentConditionActivity.class));
 
             }
         });
@@ -105,18 +115,18 @@ public class WhoIsThePatientActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public void alertDialogAddAChild(){
+    public void alertDialogAddAChild() {
         //Inflate the input.xml layout file
-        LayoutInflater inflater = (LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View viewDialog = inflater.inflate(R.layout.alert_dialog_add_a_child,null);
+        LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View viewDialog = inflater.inflate(R.layout.alert_dialog_add_a_child, null);
 
         AlertDialog.Builder myBuilder = new AlertDialog.Builder(WhoIsThePatientActivity.this);
 
         //Obtain th UI component in the input.xml layout
-        etAddAChildFirstName = (EditText)viewDialog.findViewById(R.id.etAddAChildFirstName);
-        etAddAChildLastName = (EditText)viewDialog.findViewById(R.id.etAddAChildLastName);
-        etAddAChildDateOfBirth = (EditText)viewDialog.findViewById(R.id.etDateOfBirth);
-        etAddAChildNRICorPassport = (EditText)viewDialog.findViewById(R.id.etAddAChildNRICorPassport);
+        etAddAChildFirstName = (EditText) viewDialog.findViewById(R.id.etAddAChildFirstName);
+        etAddAChildLastName = (EditText) viewDialog.findViewById(R.id.etAddAChildLastName);
+        etAddAChildDateOfBirth = (EditText) viewDialog.findViewById(R.id.etDateOfBirth);
+        etAddAChildNRICorPassport = (EditText) viewDialog.findViewById(R.id.etAddAChildNRICorPassport);
 
         etAddAChildDateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,12 +154,13 @@ public class WhoIsThePatientActivity extends AppCompatActivity {
                 mDatePicker.show();
             }
         });
+
         //Set the view of the dialog
         myBuilder.setView(viewDialog);
         myBuilder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(WhoIsThePatientActivity.this,WhoIsThePatientActivity.class));
+                startActivity(new Intent(WhoIsThePatientActivity.this, WhoIsThePatientActivity.class));
 
             }
         });
@@ -162,5 +173,10 @@ public class WhoIsThePatientActivity extends AppCompatActivity {
 
         AlertDialog myDialog = myBuilder.create();
         myDialog.show();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

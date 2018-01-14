@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class VideoConnectActivity extends AppCompatActivity {
 
     ImageButton ibSeeADoctorNow,ibSeeMyFavouriteDoctor,ibScheduleAnAppointment;
@@ -21,6 +24,13 @@ public class VideoConnectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_connect);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
+
         ImageButton bck = (ImageButton) findViewById(R.id.btnBack);
         bck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,5 +91,10 @@ public class VideoConnectActivity extends AppCompatActivity {
 
         AlertDialog myDialog = myBuilder.create();
         myDialog.show();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

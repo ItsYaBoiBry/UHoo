@@ -2,14 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hoo.u.magazine.u_hooprototype">
 
-    <uses-feature android:name="android.hardware.camera2"/>
+    <uses-feature android:name="android.hardware.camera2" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -35,13 +36,14 @@
         <activity android:name=".ActivityTransport" />
         <activity android:name=".ActivityServices" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ActivityFoodDelivery"/>
+        <activity android:name=".ActivityFoodDelivery" />
         <activity android:name=".MedicalActivity" />
         <activity android:name=".VideoConnectActivity" />
         <activity android:name=".WhoIsThePatientActivity" />
         <activity android:name=".PresentConditionActivity" />
         <activity android:name=".GeneralSymptomsActivity" />
-        <activity android:name=".MedicalServicesSharePhotoActivity"/>
+        <activity android:name=".MedicalServicesSharePhotoActivity" />
+        <activity android:name=".ActivityDelivery"></activity>
     </application>
 
 </manifest>

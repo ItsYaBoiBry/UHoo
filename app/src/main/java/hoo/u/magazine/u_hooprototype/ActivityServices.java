@@ -28,7 +28,7 @@ public class ActivityServices extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Light.ttf")
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );

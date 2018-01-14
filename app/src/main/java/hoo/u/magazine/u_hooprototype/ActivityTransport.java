@@ -46,7 +46,7 @@ public class ActivityTransport extends AppCompatActivity {
         setContentView(R.layout.activity_transport);
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Light.ttf")
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );

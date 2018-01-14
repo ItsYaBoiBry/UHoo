@@ -21,11 +21,11 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Light.ttf")
+                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
-        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Montserrat-Light.ttf");
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Quicksand-Regular.ttf");
         TextView slogan = (TextView) findViewById(R.id.slogan);
         slogan.setTypeface(font);
         new Handler().postDelayed(new Runnable() {
