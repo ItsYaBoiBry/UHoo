@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF5E7"
+    android:orientation="vertical"
+    tools:context="hoo.u.magazine.u_hooprototype.ActivityFoodDelivery">
+
+    <RelativeLayout
+        android:id="@+id/llToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:gravity="start|center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <ImageButton
+            android:id="@+id/btnBack"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:src="@mipmap/ic_arrow_back_white_24dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:id="@+id/logoToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/toplogo" />
+
+    </RelativeLayout>
+     <ListView
+         android:divider="@color/transparent"
+         android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvFood"/>
+    <!--<ScrollView-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_below="@id/llToolbar"-->
+    <!--android:scrollbars="none"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+    <!--<ListView-->
+    <!--android:divider="@color/transparent"-->
+    <!--android:id="@+id/lvFood"-->
+    <!--android:scrollbars="none"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"/>-->
+
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+</LinearLayout>
+

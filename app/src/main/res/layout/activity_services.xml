@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF5E7"
+    tools:context="hoo.u.magazine.u_hooprototype.ActivityServices">
+
+    <RelativeLayout
+        android:id="@+id/llToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:gravity="start|center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <ImageButton
+            android:id="@+id/btnBack"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:src="@mipmap/ic_arrow_back_white_24dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:id="@+id/logoToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/toplogo" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_above="@id/navigation"
+        android:layout_marginBottom="25dp"
+        android:scrollbars="none"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/llToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scrollView2">
+
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2.5dp">
+
+                    <ImageButton
+                        android:id="@+id/catFoodDelivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/food_delivery_service" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/category_darkened_background"
+                        android:gravity="center"
+                        android:text="Food"
+                        android:textColor="@color/white"
+                        android:textSize="35sp" />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/foodDeliveryExpand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnFastFood"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:gravity="center"
+                        android:text="- Fast Food -"
+                        android:textSize="15dp"/>
+                    <Button
+                        android:id="@+id/btnAroundMe"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="- Restaurants &amp; Cafes -"
+                        android:textSize="15dp" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:background="@drawable/category_darkened_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2.5dp">
+
+                    <ImageButton
+                        android:id="@+id/catDelivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/category_darkened_background"
+                        android:src="@drawable/delivery_services" />
+
+                    <TextView
+                        android:background="@drawable/category_darkened_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center"
+                        android:text="Delivery"
+                        android:textColor="@color/white"
+                        android:textSize="35sp" />
+
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/deliveryExpand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnPackageDeliveries"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:gravity="center"
+                        android:text="- Small Packages -"
+                        android:textSize="15dp"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnMovingBulk"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:gravity="center"
+                        android:text="- Bigger and Bulkier -"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2.5dp">
+
+                    <ImageButton
+                        android:background="@drawable/category_darkened_background"
+                        android:id="@+id/catLaundry"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/laundry_services" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/category_darkened_background"
+                        android:gravity="center"
+                        android:text="Laundry"
+                        android:textColor="@color/white"
+                        android:textSize="35sp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="2.5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="2.5dp">
+
+                    <ImageButton
+                        android:id="@+id/catCars"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/automobile_service" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/category_darkened_background"
+                        android:gravity="center"
+                        android:text="automobile"
+                        android:textColor="@color/white"
+                        android:textSize="35sp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2.5dp">
+
+                    <ImageButton
+                        android:id="@+id/catGroceries"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/groceries_service" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/category_darkened_background"
+                        android:gravity="center"
+                        android:text="Groceries"
+                        android:textColor="@color/white"
+                        android:textSize="35sp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="1dp"
+        app:menu="@menu/navigation" />
+
+
+</RelativeLayout>
