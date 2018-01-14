@@ -22,7 +22,8 @@ public class ActivityServices extends AppCompatActivity {
     ImageButton foodDelivery, delivery;
     LinearLayout llFoodDelivery, llDelivery;
     ImageView toolbarLogo;
-    Button btnFastFood,btnRest;
+    Button btnFastFood, btnRest, btnSmallDelivery, btnBigDelivery;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class ActivityServices extends AppCompatActivity {
                 .build()
         );
 
+        //back btn toolbar
         ImageButton bck = (ImageButton) findViewById(R.id.btnBack);
         bck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,70 +43,94 @@ public class ActivityServices extends AppCompatActivity {
             }
         });
 
+
+
         btnFastFood = (Button) findViewById(R.id.btnFastFood);
         btnRest = (Button) findViewById(R.id.btnAroundMe);
-        toolbarLogo = (ImageView) findViewById(R.id.logoToolbar);
-        toolbarLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnSmallDelivery = (Button) findViewById(R.id.btnPackageDeliveries);
+        btnBigDelivery = (Button) findViewById(R.id.btnMovingBulk);
+
         llFoodDelivery = (LinearLayout) findViewById(R.id.foodDeliveryExpand);
         llFoodDelivery.setVisibility(View.GONE);
         llDelivery = (LinearLayout) findViewById(R.id.deliveryExpand);
         llDelivery.setVisibility(View.GONE);
         foodDelivery = (ImageButton) findViewById(R.id.catFoodDelivery);
+
+        //Food Delivery Category
         foodDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (llFoodDelivery.getVisibility() == View.GONE){
+                if (llFoodDelivery.getVisibility() == View.GONE) {
                     llFoodDelivery.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     llFoodDelivery.setVisibility(View.GONE);
                 }
 
             }
         });
+        //Food Delivery Fast food
+        btnFastFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityServices.this, ActivityFoodDelivery.class);
+                intent.putExtra("key", "1");
+                startActivity(intent);
+            }
+        });
+
+        //Food Delivery Restaurants
+        btnRest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityServices.this, ActivityFoodDelivery.class);
+                intent.putExtra("key", "2");
+                startActivity(intent);
+            }
+        });
+
+        //Delivery Category
         delivery = (ImageButton) findViewById(R.id.catDelivery);
         delivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (llDelivery.getVisibility() == View.GONE){
+                if (llDelivery.getVisibility() == View.GONE) {
                     llDelivery.setVisibility(View.VISIBLE);
 
-                }else{
+                } else {
                     llDelivery.setVisibility(View.GONE);
                 }
 
             }
         });
-        btnFastFood.setOnClickListener(new View.OnClickListener() {
+        //Small Delivery
+        btnSmallDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityServices.this,ActivityFoodDelivery.class);
-                intent.putExtra("key","1");
+                Intent intent = new Intent(ActivityServices.this, ActivityDelivery.class);
+                intent.putExtra("delivery", 0);
                 startActivity(intent);
             }
         });
-        btnRest.setOnClickListener(new View.OnClickListener() {
+        //Bulky Delivery
+        btnBigDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityServices.this,ActivityFoodDelivery.class);
-                intent.putExtra("key","2");
+                Intent intent = new Intent(ActivityServices.this, ActivityDelivery.class);
+                intent.putExtra("delivery", 1);
                 startActivity(intent);
             }
         });
-
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

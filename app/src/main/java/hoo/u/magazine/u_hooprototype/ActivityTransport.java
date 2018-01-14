@@ -50,13 +50,6 @@ public class ActivityTransport extends AppCompatActivity {
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
-        toolbarLogo = (ImageView) findViewById(R.id.logoToolbar);
-        toolbarLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         Typeface bold = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
 

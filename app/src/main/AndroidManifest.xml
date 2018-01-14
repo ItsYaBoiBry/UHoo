@@ -43,7 +43,8 @@
         <activity android:name=".PresentConditionActivity" />
         <activity android:name=".GeneralSymptomsActivity" />
         <activity android:name=".MedicalServicesSharePhotoActivity" />
-        <activity android:name=".ActivityDelivery"></activity>
+        <activity android:name=".ActivityDelivery" />
+        <activity android:name=".ActivityLifestyle"></activity>
     </application>
 
 </manifest>

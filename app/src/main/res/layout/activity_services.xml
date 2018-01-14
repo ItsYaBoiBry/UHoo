@@ -15,233 +15,241 @@
         android:gravity="start|center_vertical"
         android:orientation="vertical"
         android:visibility="visible">
+
         <ImageButton
             android:id="@+id/btnBack"
             style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:src="@mipmap/ic_arrow_back_white_24dp"
             android:layout_width="60dp"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_arrow_back_white_24dp" />
 
-        <ImageView
-            android:id="@+id/logoToolbar"
-            android:layout_width="wrap_content"
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/toplogo" />
+            android:text="U-Services"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:textAlignment="center"
+            android:textSize="25sp"/>
 
     </RelativeLayout>
 
     <ScrollView
-        android:layout_above="@id/navigation"
-        android:layout_marginBottom="25dp"
-        android:scrollbars="none"
-        android:layout_margin="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/llToolbar"
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/navigation"
         android:layout_alignParentStart="true"
-        android:id="@+id/scrollView2">
+        android:layout_below="@id/llToolbar"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp">
+
+                <ImageButton
+                    android:id="@+id/catFoodDelivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/food_delivery_service" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/category_darkened_background"
+                    android:gravity="center"
+                    android:text="Food"
+                    android:textColor="@color/white"
+                    android:textSize="35sp" />
+
+            </RelativeLayout>
 
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:id="@+id/foodDeliveryExpand"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="2.5dp">
-
-                    <ImageButton
-                        android:id="@+id/catFoodDelivery"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_alignParentTop="true"
-                        android:src="@drawable/food_delivery_service" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/category_darkened_background"
-                        android:gravity="center"
-                        android:text="Food"
-                        android:textColor="@color/white"
-                        android:textSize="35sp" />
-
-
-                </RelativeLayout>
-                <LinearLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/foodDeliveryExpand"
+                <Button
+                    android:id="@+id/btnFastFood"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center"
+                    android:text="- Fast Food -"
+                    android:textSize="15dp" />
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btnFastFood"
-                        style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:gravity="center"
-                        android:text="- Fast Food -"
-                        android:textSize="15dp"/>
-                    <Button
-                        android:id="@+id/btnAroundMe"
-                        style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center"
-                        android:text="- Restaurants &amp; Cafes -"
-                        android:textSize="15dp" />
-                </LinearLayout>
-                <RelativeLayout
-                    android:background="@drawable/category_darkened_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="2.5dp">
-
-                    <ImageButton
-                        android:id="@+id/catDelivery"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_alignParentTop="true"
-                        android:background="@drawable/category_darkened_background"
-                        android:src="@drawable/delivery_services" />
-
-                    <TextView
-                        android:background="@drawable/category_darkened_background"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:gravity="center"
-                        android:text="Delivery"
-                        android:textColor="@color/white"
-                        android:textSize="35sp" />
-
-
-
-                </RelativeLayout>
-                <LinearLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/deliveryExpand"
+                <Button
+                    android:id="@+id/btnAroundMe"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="- Restaurants &amp; Cafes -"
+                    android:textSize="15dp" />
+            </LinearLayout>
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btnPackageDeliveries"
-                        style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:gravity="center"
-                        android:text="- Small Packages -"
-                        android:textSize="15dp"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btnMovingBulk"
-                        style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:gravity="center"
-                        android:text="- Bigger and Bulkier -"
-                        android:textSize="15dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp"
+                android:background="@drawable/category_darkened_background">
 
-                </LinearLayout>
-                <RelativeLayout
+                <ImageButton
+                    android:id="@+id/catDelivery"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="2.5dp">
-
-                    <ImageButton
-                        android:background="@drawable/category_darkened_background"
-                        android:id="@+id/catLaundry"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/laundry_services" />
+                    android:background="@drawable/category_darkened_background"
+                    android:src="@drawable/delivery_services" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:background="@drawable/category_darkened_background"
-                        android:gravity="center"
-                        android:text="Laundry"
-                        android:textColor="@color/white"
-                        android:textSize="35sp" />
-
-                </RelativeLayout>
-                <RelativeLayout
+                <TextView
                     android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="2.5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="2.5dp">
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/category_darkened_background"
+                    android:gravity="center"
+                    android:text="Delivery"
+                    android:textColor="@color/white"
+                    android:textSize="35sp" />
 
-                    <ImageButton
-                        android:id="@+id/catCars"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_alignParentTop="true"
-                        android:src="@drawable/automobile_service" />
+            </RelativeLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:background="@drawable/category_darkened_background"
-                        android:gravity="center"
-                        android:text="automobile"
-                        android:textColor="@color/white"
-                        android:textSize="35sp" />
+            <LinearLayout
+                android:id="@+id/deliveryExpand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
 
-                </RelativeLayout>
-                <RelativeLayout
+                <Button
+                    android:id="@+id/btnPackageDeliveries"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="2.5dp">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="- Small Packages -"
+                    android:textSize="15dp" />
 
-                    <ImageButton
-                        android:id="@+id/catGroceries"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_alignParentTop="true"
-                        android:src="@drawable/groceries_service" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:background="@drawable/category_darkened_background"
-                        android:gravity="center"
-                        android:text="Groceries"
-                        android:textColor="@color/white"
-                        android:textSize="35sp" />
-
-                </RelativeLayout>
-
+                <Button
+                    android:id="@+id/btnMovingBulk"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="- Bigger and Bulkier -"
+                    android:textSize="15dp" />
 
             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp">
+
+                <ImageButton
+                    android:id="@+id/catLaundry"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/category_darkened_background"
+                    android:src="@drawable/laundry_services" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/category_darkened_background"
+                    android:gravity="center"
+                    android:text="Laundry"
+                    android:textColor="@color/white"
+                    android:textSize="35sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp">
+
+                <ImageButton
+                    android:id="@+id/catCars"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/automobile_service" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/category_darkened_background"
+                    android:gravity="center"
+                    android:text="automobile"
+                    android:textColor="@color/white"
+                    android:textSize="35sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp">
+
+                <ImageButton
+                    android:id="@+id/catGroceries"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/groceries_service" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/category_darkened_background"
+                    android:gravity="center"
+                    android:text="Groceries"
+                    android:textColor="@color/white"
+                    android:textSize="35sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 
@@ -253,6 +261,5 @@
         android:background="@color/white"
         android:elevation="1dp"
         app:menu="@menu/navigation" />
-
 
 </RelativeLayout>
