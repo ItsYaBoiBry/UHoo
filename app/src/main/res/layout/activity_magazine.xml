@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hoo.u.magazine.u_hooprototype.ActivityMagazine">
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:id="@+id/llToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:gravity="start|center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_arrow_back_white_24dp" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="U-Lifestyle"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:textAlignment="center"
+            android:textSize="25sp"/>
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/magazineSite"
+        android:layout_below="@id/llToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
+
+    <LinearLayout
+        android:id="@+id/loadingScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#99F0F0F0"
+        android:gravity="center">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            style="@style/AVLoadingIndicatorView.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorColor="@color/colorPrimary"
+            app:indicatorName="PacmanIndicator" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -44,7 +44,8 @@
         <activity android:name=".GeneralSymptomsActivity" />
         <activity android:name=".MedicalServicesSharePhotoActivity" />
         <activity android:name=".ActivityDelivery" />
-        <activity android:name=".ActivityLifestyle"></activity>
+        <activity android:name=".ActivityLifestyle" />
+        <activity android:name=".ActivityMagazine"></activity>
     </application>
 
 </manifest>

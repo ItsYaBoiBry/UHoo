@@ -66,6 +66,7 @@ public class FragmentHome extends Fragment {
             @Override
             public void onClick(View v) {
                 Toasty("Lifestyle Selected");
+                startActivity(new Intent(getContext(),ActivityLifestyle.class));
                 // do something here
             }
         });
