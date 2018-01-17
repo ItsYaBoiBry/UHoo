@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context="hoo.u.magazine.u_hooprototype.ActivityMedicalCall">
+
+    <ImageView
+        android:alpha="0.9"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/docVid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/doc_face_vidcall"/>
+    <ImageView
+        android:alpha="0.7"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="110dp"
+        android:layout_height="170dp"
+        android:src="@drawable/user_face_vidcall"
+        android:scaleType="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10:45"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/endCall"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/ic_call_end_white_24dp"
+            android:elevation="6dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+   
+
+
+
+</RelativeLayout>

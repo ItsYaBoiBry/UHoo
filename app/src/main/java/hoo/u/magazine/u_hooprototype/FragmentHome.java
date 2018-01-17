@@ -2,9 +2,11 @@ package hoo.u.magazine.u_hooprototype;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import org.w3c.dom.Text;
 public class FragmentHome extends Fragment {
     ImageButton btnTransport, btnMedical, btnServices, btnLifestyle;
 
+
     public FragmentHome() {
         // Required empty public constructor
     }
@@ -34,51 +37,61 @@ public class FragmentHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragment_home, container, false);
+
+        Typeface bold = Typeface.createFromAsset(getActivity().getAssets(),"fonts/Montserrat-SemiBold.ttf");
+
         btnLifestyle = (ImageButton) view.findViewById(R.id.catLifestyle);
         btnMedical = (ImageButton) view.findViewById(R.id.catMedical);
         btnServices = (ImageButton) view.findViewById(R.id.catServices);
         btnTransport = (ImageButton) view.findViewById(R.id.catTransport);
 
+
         btnTransport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toasty("Transport Clicked");
+
                 startActivity(new Intent(getContext(),ActivityTransport.class));
             }
         });
+
         btnServices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toasty("Services Selected");
-                startActivity(new Intent(getContext(),ActivityServices.class));
-                // do something here
-            }
-        });
-        btnMedical.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toasty("Medical Selected");
-                startActivity(new Intent(getContext(),MedicalActivity.class));
-                // do something here
-            }
-        });
-        btnLifestyle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toasty("Lifestyle Selected");
-                startActivity(new Intent(getContext(),ActivityLifestyle.class));
+
+                Fragment fragment = new FragmentServices();
+                replaceFragment(fragment);
                 // do something here
             }
         });
 
+        btnMedical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new FragmentMedical();
+                replaceFragment(fragment);
+                // do something here
+            }
+        });
+
+        btnLifestyle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fragment = new FragmentLifestyle();
+                replaceFragment(fragment);
+                // do something here
+            }
+        });
 
         return view;
     }
 
-    //self debugging purposes or future use depending.
-    public void Toasty(String message) {
-        Toast toast = Toast.makeText(getContext(), message, Toast.LENGTH_SHORT);
-        toast.show();
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.mainFrameLayout, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 }

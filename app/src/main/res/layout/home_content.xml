@@ -3,144 +3,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/contentScrollView"
+
+    <LinearLayout
+        android:id="@+id/llContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="4">
 
         <LinearLayout
-            android:id="@+id/llContent"
+            android:id="@+id/llToolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary"
+            android:gravity="start"
             android:orientation="vertical">
 
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/logoToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="2.5dp">
+                android:layout_height="match_parent"
+                android:src="@drawable/toplogo" />
 
-                <ImageButton
-                    android:id="@+id/catTransport"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/uhoo_transport" />
-
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/category_darkened_background"
-                    android:gravity="center"
-                    android:text="Transport"
-                    android:textColor="@color/white"
-                    android:textSize="45sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="2.5dp">
-
-                <ImageButton
-                    android:id="@+id/catMedical"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/uhoo_medical" />
-
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/category_darkened_background"
-                    android:gravity="center"
-                    android:text="Medical"
-                    android:textColor="@color/white"
-                    android:textSize="45sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="2.5dp">
-
-                <ImageButton
-                    android:id="@+id/catServices"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/uhoo_services" />
-
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/category_darkened_background"
-                    android:gravity="center"
-                    android:text="Services"
-                    android:textColor="@color/white"
-                    android:textSize="45sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="2.5dp">
-
-                <ImageButton
-                    android:id="@+id/catLifestyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/uhoo_lifestyle" />
-
-                <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/category_darkened_background"
-                    android:gravity="center"
-                    android:text="Lifestyle"
-                    android:textColor="@color/white"
-                    android:textSize="45sp" />
-
-            </RelativeLayout>
         </LinearLayout>
 
-    </ScrollView>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginBottom="0.5dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/catTransport"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/uhoo_transport" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/category_darkened_background"
+                android:gravity="center"
+                android:text="U-Rides"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginBottom="0.5dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="0.5dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/catMedical"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/uhoo_medical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/category_darkened_background"
+                android:gravity="center"
+                android:text="U-Meds"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginBottom="0.5dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="0.5dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/catServices"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/uhoo_services" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/category_darkened_background"
+                android:gravity="center"
+                android:text="U-Services"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="0.5dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/catLifestyle"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/uhoo_lifestyle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/category_darkened_background"
+                android:gravity="center"
+                android:text="U-Lifestyle"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package hoo.u.magazine.u_hooprototype;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,9 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class ActivityMagazine extends AppCompatActivity {
     WebView mWebView;
     LinearLayout loadingScreen;
@@ -19,6 +23,12 @@ public class ActivityMagazine extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magazine);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Montserrat-Light.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
 
         ImageButton bck = findViewById(R.id.btnBack);
         bck.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +41,7 @@ public class ActivityMagazine extends AppCompatActivity {
         mWebView = findViewById(R.id.magazineSite);
         loadingScreen = findViewById(R.id.loadingScreen);
 
-        renderWebPage("https://www.google.com.sg");
+        renderWebPage("http://www.u-hoo.com");
 
     }
     // Custom method to render a web page
@@ -66,4 +76,9 @@ public class ActivityMagazine extends AppCompatActivity {
         // Render the web page
         mWebView.loadUrl(urlToRender);
     }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
 }

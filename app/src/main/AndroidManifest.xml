@@ -34,18 +34,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityTransport" />
-        <activity android:name=".ActivityServices" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ActivityFoodDelivery" />
-        <activity android:name=".MedicalActivity" />
-        <activity android:name=".VideoConnectActivity" />
-        <activity android:name=".WhoIsThePatientActivity" />
-        <activity android:name=".PresentConditionActivity" />
-        <activity android:name=".GeneralSymptomsActivity" />
-        <activity android:name=".MedicalServicesSharePhotoActivity" />
         <activity android:name=".ActivityDelivery" />
-        <activity android:name=".ActivityLifestyle" />
-        <activity android:name=".ActivityMagazine"></activity>
+        <activity android:name=".ActivityMagazine" />
+        <activity android:name=".ActivityMedicalConsult" />
+        <activity android:name=".ActivityViewDoctor" />
+        <activity android:name=".ActivityMedicalCall" />
+        <activity android:name=".MedicalPayment"/>
+
     </application>
 
 </manifest>

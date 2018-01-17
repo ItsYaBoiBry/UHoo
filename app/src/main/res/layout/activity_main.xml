@@ -8,25 +8,9 @@
     android:background="#FEF5E7"
     tools:context="hoo.u.magazine.u_hooprototype.MainActivity">
 
-    <LinearLayout
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/llToolbar"
-        android:gravity="start"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/logoToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/toplogo"/>
-
-    </LinearLayout>
 
     <FrameLayout
-        android:layout_marginTop="20dp"
+        android:layout_above="@id/navigation"
         android:layout_below="@id/llToolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

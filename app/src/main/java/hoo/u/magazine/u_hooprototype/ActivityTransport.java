@@ -46,12 +46,12 @@ public class ActivityTransport extends AppCompatActivity {
         setContentView(R.layout.activity_transport);
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Quicksand-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
 
-        Typeface bold = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
+        Typeface bold = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-SemiBold.ttf");
 
         etYourLocation = (EditText) findViewById(R.id.etYourLocation);
         etYourDestination = (EditText) findViewById(R.id.etYourDestination);
