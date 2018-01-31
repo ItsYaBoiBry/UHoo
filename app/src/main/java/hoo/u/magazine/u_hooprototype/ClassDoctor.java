@@ -10,6 +10,10 @@ public class ClassDoctor implements Serializable{
     private String docName, docPosition, docImage;
     private int id, docPrice;
 
+    public ClassDoctor(){
+
+    }
+
     public ClassDoctor(int id,String docName, String docPosition, String docImage, int docPrice) {
         this.id=id;
         this.docName = docName;
