@@ -25,10 +25,10 @@ import java.util.ArrayList;
  */
 public class FragmentMedicalGP extends Fragment {
     ListView lvGP;
-    ArrayList<ClassDoctor> doctors;
+    ArrayList<ClassDoctor> doctorsGP;
     ArrayList<String> doctor;
-    ArrayAdapter aa;
-    SearchView sv;
+    ArrayAdapter aaGP;
+    SearchView svGP;
 
     public FragmentMedicalGP() {
         // Required empty public constructor
@@ -42,38 +42,50 @@ public class FragmentMedicalGP extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragment_medical_g, container, false);
 
         lvGP = view.findViewById(R.id.lvGP);
-        sv = view.findViewById(R.id.sv);
+        svGP = view.findViewById(R.id.svGP);
 
-        doctors = new ArrayList<ClassDoctor>();
+        doctorsGP = new ArrayList<ClassDoctor>();
         doctor = new ArrayList<String>();
 
-        doctors.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
-        doctors.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
-        doctors.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
-        doctors.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
-        doctors.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
-        doctors.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
-        doctors.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
-        doctors.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
-        aa = new AdapterDoctor(getContext(), R.layout.custom_doctor_list, doctors);
-        lvGP.setAdapter(aa);
+        doctorsGP.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
+        doctorsGP.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
+        doctorsGP.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
+        doctorsGP.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
+        doctorsGP.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
+        doctorsGP.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
+        doctorsGP.add(new ClassDoctor(0,"Joanne Ek","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",10));
+        doctorsGP.add(new ClassDoctor(1,"Bryan Low","General Practitioner (GP Doctor)","https://i.pinimg.com/originals/95/ed/28/95ed2896339bcbb0fe160a4d3580ad17.jpg",9));
+        aaGP = new AdapterDoctor(getContext(), R.layout.custom_doctor_list, doctorsGP);
+        lvGP.setAdapter(aaGP);
 
-        final int doctorsSize = doctors.size();
+        final int doctorsSize = doctorsGP.size();
         for(int i = 0; i < doctorsSize; i++){
-            doctor.add(doctors.get(i).getDocName().toLowerCase());
+            doctor.add(doctorsGP.get(i).getDocName().toLowerCase());
             Log.e("Doctor's name: ",doctor.get(i).toString());
         }
 
         lvGP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ClassDoctor doctor = doctors.get(position);
+                ClassDoctor doctor = doctorsGP.get(position);
                 Intent intent = new Intent(getContext(), ActivityViewDoctor.class);
                 intent.putExtra("doc",doctor);
                 startActivity(intent);
             }
         });
 
+        svGP.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                aaGP.getFilter().filter(newText);
+                return true;
+            }
+        });
 
         return view;
     }

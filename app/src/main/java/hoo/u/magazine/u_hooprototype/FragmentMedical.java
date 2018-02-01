@@ -26,24 +26,6 @@ public class FragmentMedical extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragment_medical, container, false);
-        AlertDialog.Builder adb = new AlertDialog.Builder(getContext());
-        adb.setTitle("Disclaimer");
-        adb.setMessage("");
-        adb.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        adb.setNegativeButton("Back", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-
-        AlertDialog dialog = adb.create();
-        dialog.show();
 
         ImageButton bck = (ImageButton) view.findViewById(R.id.btnBack);
         bck.setOnClickListener(new View.OnClickListener() {

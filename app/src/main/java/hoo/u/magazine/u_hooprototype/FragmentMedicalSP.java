@@ -1,6 +1,8 @@
 package hoo.u.magazine.u_hooprototype;
 
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,7 +24,7 @@ public class FragmentMedicalSP extends Fragment {
     ListView lvSP;
     ArrayList<ClassDoctor> doctors;
     ArrayAdapter aa;
-    SearchView sv;
+    SearchView svSP;
 
     public FragmentMedicalSP() {
         // Required empty public constructor
@@ -36,7 +38,7 @@ public class FragmentMedicalSP extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragment_medical_s, container, false);
 
         lvSP = view.findViewById(R.id.lvSP);
-        sv = view.findViewById(R.id.sv);
+        svSP = view.findViewById(R.id.svSP);
 
         doctors = new ArrayList<ClassDoctor>();
         doctors.add(new ClassDoctor(2,"Magdalene Ho","Cardiologist","https://i.pinimg.com/originals/5a/fc/e6/5afce6b018c13fee5ef6d52bf581e545.jpg",15));
@@ -54,6 +56,20 @@ public class FragmentMedicalSP extends Fragment {
                 startActivity(intent);
             }
         });
+
+        svSP.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                aa.getFilter().filter(newText);
+                return false;
+            }
+        });
+
         return view;
     }
 
