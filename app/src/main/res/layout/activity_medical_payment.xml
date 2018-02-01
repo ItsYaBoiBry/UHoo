@@ -106,4 +106,5 @@
         android:text="Back to Listing"
         android:textColor="@color/white"
         android:textSize="20sp" />
+
 </RelativeLayout>
