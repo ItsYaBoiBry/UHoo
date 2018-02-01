@@ -7,97 +7,103 @@
     tools:context="hoo.u.magazine.u_hooprototype.MedicalPayment">
 
     <RelativeLayout
-        android:layout_alignParentTop="true"
         android:id="@+id/llToolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentTop="true"
         android:background="@color/colorPrimary"
         android:gravity="start|center_vertical"
         android:orientation="vertical"
         android:visibility="visible">
+
         <TextView
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Summary"
-            android:textColor="@color/white"
             android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="Summary"
             android:textAlignment="center"
-            android:textSize="25sp"/>
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
     </RelativeLayout>
+
     <LinearLayout
-        android:layout_below="@id/llToolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_below="@id/llToolbar"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp">
 
             <ImageView
-                android:layout_alignParentTop="true"
-                android:scaleType="center"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/doc_profile_backround"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="100dp"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:scaleType="center"
+                android:src="@drawable/doc_profile_backround" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/docImg"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                app:civ_border_width="2dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/logo"
                 app:civ_border_color="@color/colorPrimary"
-                android:src="@drawable/logo"/>
+                app:civ_border_width="2dp" />
 
         </RelativeLayout>
+
         <TextView
-            android:textSize="30sp"
-            android:textAlignment="center"
+            android:id="@+id/docName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/docName"/>
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Duration: 10:45 minutes"
             android:textAlignment="center"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:text="Total: "
-            android:textAlignment="center"
+            android:id="@+id/docPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/docPrice"/>
+            android:text="Total: "
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
+
     <TextView
-        android:textAlignment="center"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="Users will be charged for the first 15 minutes.\nPrescription and MC will be sent via email to users through the doctor."
-        android:layout_marginBottom="20dp"
-        android:layout_above="@id/btnBackToListing"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnBackToListing"
+        android:layout_marginBottom="20dp"
+        android:text="Users will be charged for the first 15 minutes.\nPrescription and MC will be sent via email to users through the doctor."
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="10sp" />
+
     <Button
         android:id="@+id/btnBackToListing"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_margin="10dp"
         android:background="@drawable/orange_round"
-        android:text="Back to Listing"
-        android:textSize="20sp"
         android:elevation="6dp"
+        android:text="Back to Listing"
         android:textColor="@color/white"
-        android:layout_margin="10dp"/>
+        android:textSize="20sp" />
 </RelativeLayout>
