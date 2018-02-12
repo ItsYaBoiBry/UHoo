@@ -1,6 +1,8 @@
 package hoo.u.magazine.u_hooprototype;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -68,9 +70,25 @@ public class FragmentHome extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Fragment fragment = new FragmentMedical();
-                replaceFragment(fragment);
-                // do something here
+                AlertDialog.Builder adb = new AlertDialog.Builder(getContext());
+                adb.setTitle("Disclaimer");
+                adb.setMessage("");
+                adb.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Fragment fragment = new FragmentMedical();
+                        replaceFragment(fragment);
+                    }
+                });
+                adb.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                AlertDialog dialog = adb.create();
+                dialog.show();
             }
         });
 
