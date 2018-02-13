@@ -41,8 +41,8 @@
         <activity android:name=".ActivityMedicalConsult" />
         <activity android:name=".ActivityViewDoctor" />
         <activity android:name=".ActivityMedicalCall" />
-        <activity android:name=".MedicalPayment"/>
-
+        <activity android:name=".MedicalPayment" />
+        <activity android:name=".ActivityWebView"></activity>
     </application>
 
 </manifest>

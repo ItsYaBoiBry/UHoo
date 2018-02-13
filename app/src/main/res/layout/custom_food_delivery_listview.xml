@@ -54,7 +54,16 @@
             android:layout_height="40dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
+            android:id="@+id/uber_eats_logo"
             android:src="@drawable/ubereats_logo" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/chope_logo"
+            android:src="@drawable/chope_logo" />
     </LinearLayout>
 
 

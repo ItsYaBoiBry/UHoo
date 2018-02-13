@@ -1,6 +1,7 @@
 package hoo.u.magazine.u_hooprototype;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -31,12 +33,22 @@ public class MainActivity extends AppCompatActivity {
                 .build()
         );
 
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setTitle("Note");
+        dialog.setMessage("This App is still under development and most of the functions are still just for show. Please refrain from purchasing any items from this site at the moment\n\nIf you find any bugs or feel that the app has any areas which needs improving, please feel free to email bryanlowsk@gmail.com for any errors you may encounter.\n\nThank you for understanding. ");
+        dialog.setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
         if (savedInstanceState == null) {
             fragment = new FragmentHome();
             trans = getSupportFragmentManager().beginTransaction();
             trans.add(R.id.mainFrameLayout, fragment);
             trans.commit();
         }
+        AlertDialog disclaimer = dialog.create();
+        disclaimer.show();
 
         BottomNavigationView bottomBar = (BottomNavigationView) findViewById(R.id.navigation);
         bottomBar.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

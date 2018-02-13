@@ -10,13 +10,26 @@ public class TestingRestaurants implements Serializable {
     private int id;
     private String imgSrc;
     private String tvSrc;
+    private String booking;
 
     public TestingRestaurants(int id, String imgSrc, String tvSrc) {
         this.id = id;
         this.imgSrc = imgSrc;
         this.tvSrc = tvSrc;
     }
+    public TestingRestaurants(int id, String imgSrc, String tvSrc, String booking) {
+        this.id = id;
+        this.imgSrc = imgSrc;
+        this.tvSrc = tvSrc;
+        this.booking = booking;
+    }
 
+    public void setBooking(String booking){
+        this.booking = booking;
+    }
+    public String getBooking(){
+        return booking;
+    }
     public int getId() {
         return id;
     }

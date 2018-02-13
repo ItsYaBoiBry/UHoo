@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.util.ListUpdateCallback;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -48,8 +49,8 @@ public class ActivityFoodDelivery extends AppCompatActivity {
         listView.setAdapter(aa);
         restaurants.add(new TestingRestaurants(1,"MacDonald's","https://data.whicdn.com/images/12405129/large.jpg"));
         restaurants.add(new TestingRestaurants(1,"KFC","https://farm1.staticflickr.com/722/21507528168_befd796920_c.jpg"));
-        restaurants.add(new TestingRestaurants(2,"Pepper Lunch Singapore","https://i2.wp.com/nomss.com/wp-content/uploads/2016/04/Pepper-Lunch-Cambie-Vancouver-Steak-and-Rice-Sizzle-Instanomss-Nomss-Food-Photography-Healthy-Travel-Lifestyle-Canada-00007.jpg"));
-        restaurants.add(new TestingRestaurants(2,"PastaMania","https://mtc1-dydfxmh.netdna-ssl.com/wp-content/uploads/2016/09/DSCF4499-1300x867.jpg"));
+        restaurants.add(new TestingRestaurants(2,"Club Street Social","http://d2jzxcrnybzkkt.cloudfront.net/uploads/2017/09/CSS_Seared_Scallops_jpg_1505863967.jpg?date=201802121000","http://www.chope.co/singapore-restaurants/restaurant/club-street-social"));
+        restaurants.add(new TestingRestaurants(2,"Ninja Cut","http://d2jzxcrnybzkkt.cloudfront.net/uploads/2017/07/Ninja_Cut_1_Beefy_Patty_Macaro_1500954652.jpg?date=201802121000","http://www.chope.co/singapore-restaurants/restaurant/ninja-cut"));
         aa.notifyDataSetChanged();
         for( int i = 0; i < restaurants.size(); i++){
             if(restaurants.get(i).getId() == Integer.parseInt(key)){
@@ -60,6 +61,7 @@ public class ActivityFoodDelivery extends AppCompatActivity {
             }
         }
         aa.notifyDataSetChanged();
+
 
     }
     @Override
