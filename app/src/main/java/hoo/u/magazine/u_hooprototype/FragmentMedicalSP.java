@@ -1,8 +1,5 @@
 package hoo.u.magazine.u_hooprototype;
 
-
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,7 +33,6 @@ public class FragmentMedicalSP extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragment_medical_s, container, false);
-
         lvSP = view.findViewById(R.id.lvSP);
         svSP = view.findViewById(R.id.svSP);
 
